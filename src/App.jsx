@@ -10,6 +10,8 @@ import {
   theme,
 } from '@chakra-ui/react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import AllRoutes from './routes/AllRoutes';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         </HStack>
       </Flex>
       <Navbar />
+      <AllRoutes />
+      <Footer/>
     </ChakraProvider>
   );
 }
