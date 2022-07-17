@@ -7,12 +7,25 @@ import {
   HStack,
   Flex,
   Grid,
-  theme,
+  extendTheme,
+  
 } from '@chakra-ui/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AllRoutes from './routes/AllRoutes';
-
+const theme = extendTheme({
+  styles: {
+    global: {
+      "body": {
+        color: "#666",
+        fontSize:".82rem"
+      },
+      "*": {
+        boxSizing:'border-box'
+      }
+    }
+  }
+})
 function App() {
   return (
     <ChakraProvider theme={theme}>
