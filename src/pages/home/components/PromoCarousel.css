@@ -1,0 +1,7 @@
+.carousel_container{
+    position:relative;
+}
+.selected{
+    color:black;
+    border-bottom: 2px solid black;
+}

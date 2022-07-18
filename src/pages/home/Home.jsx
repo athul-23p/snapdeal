@@ -9,8 +9,8 @@ import {
 } from '@chakra-ui/react';
 import CategoryNavigationBar from './components/CategoryNavigation';
 import MobileAppBanner from './components/MobileAppBanner';
-import PromoCaraousel from './components/PromoCarousel';
-import Caraousel from './components/PromoCarousel';
+import PromoCarousel from './components/PromoCarousel';
+
 import RecentlyViewedProducts from './components/RecentlyViewedProducts';
 import TrendingCaraousel from './components/TrendingCarousel';
 import styled from 'styled-components';
@@ -47,8 +47,8 @@ function Home() {
             "app app app app app"
 
         `}
-        gridTemplateColumns={'200px repeat(3,220px) 220px'}
-        gridTemplateRows={'repeat(3,300px) 500px'}
+        gridTemplateColumns={'200px repeat(3,240px) 220px'}
+        gridTemplateRows={'repeat(3,320px) 465px'}
         w="fit-content"
         mx="auto"
         my={4}
@@ -57,7 +57,7 @@ function Home() {
           <CategoryNavigationBar />
         </GridItem>
         <GridItem border="1px dotted" area="promo">
-          <PromoCaraousel />
+          <PromoCarousel />
         </GridItem>
         <GridItem border="1px dotted" area="pincode">
           <Box textAlign={'center'} className="pincode-container">
@@ -93,7 +93,7 @@ function Home() {
                 h="34px"
                 borderRadius="3px"
                 textTransform={'uppercase'}
-                disabled="true"
+                disabled={true}
               >
                 Next
               </Button>

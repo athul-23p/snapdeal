@@ -1,0 +1,25 @@
+
+
+.carousel-btn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: white;
+    border:1px solid lightgrey;
+    z-index: 2;
+}
+
+.carousel-btn:hover{
+    background-color: #222;
+    color:white;
+}
+
+.next-btn{
+    top:120px;
+    right:15px;
+}
+
+.prev-btn{
+    top:120px;
+    left:15px;
+}
