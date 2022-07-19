@@ -2,10 +2,8 @@ import { Box, HStack, Image, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  
-
-    & > .app-image {
-    
+ 
+  & > .app-image {
     width: 50%;
     height: 100%;
   }

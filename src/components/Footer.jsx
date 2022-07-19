@@ -11,28 +11,37 @@ import {
   Input,
   Button,
   Icon,
+  Center,
 } from '@chakra-ui/react';
-
+import './Footer.css';
 const features = [
   {
     heading: '100% SECURE PAYMENTS',
     t1: 'Moving your card details to a much more',
     t2: 'secured place',
+    bgpos: [-366, -63],
+    dims: [60, 51],
   },
   {
     heading: 'TRUSTPAY',
     t1: '100% Payment Protection. Easy',
     t2: 'Return Policy',
+    bgpos: [-420, -63],
+    dims: [48, 51],
   },
   {
     heading: 'HELP CENTER',
     t1: 'Got a question? Look no further',
     t2: 'Browse our FAQs or submit your query here.',
+    bgpos: [-467, -63],
+    dims: [54, 51],
   },
   {
     heading: 'SHOP ON THE GO',
     t1: 'Download the app and get exciting',
     t2: 'app only offers at your fingertips',
+    bgpos: [-520, -63],
+    dims: [38, 51],
   },
 ];
 
@@ -78,7 +87,7 @@ function Footer() {
         borderColor={'gray.200'}
       >
         {features.map(item => (
-          <FeatureItem {...item} />
+          <FeatureItem {...item}  />
         ))}
       </Grid>
       <Flex p={4} justify={'space-around'} pt={10}>
@@ -192,21 +201,24 @@ function Footer() {
   );
 }
 
-function FeatureItem({ heading, t1, t2 }) {
+function FeatureItem({ heading, t1, t2,bgpos ,dims}) {
   return (
     <GridItem
       borderLeft="1px solid"
       borderRight="1px solid"
       borderColor={'gray.200'}
     >
-      <Box className="feature-img" h="150px"></Box>
+      <Center my={4}>
+      <Box className="feature-img" w={`${dims[0]}px`}  h='51px' backgroundPosition={`${bgpos[0]}px ${bgpos[1]}px`}></Box>
+
+      </Center>
       <Box
         className="footer-grid-text"
         color="gray.600"
         p={4}
         textAlign="center"
       >
-        <Heading fontSize="1.3rem">{heading}</Heading>
+        <Heading fontSize="1.1rem">{heading}</Heading>
         <Text fontSize={'.8rem'} mt={2}>
           {t1}
         </Text>

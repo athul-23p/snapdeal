@@ -3,7 +3,7 @@ import './PromoCarousel.css';
 import CarouselNextButton from './CarouselNextButton';
 import CarouselPrevButton from './CarouselPrevButton';
 import { useRef, useState } from 'react';
-
+import { useEffect } from 'react';
 const items = [
   'https://n3.sdlcdn.com/imgs/j/8/e/Health_ID_Snapdeal_ABDM_1300X410-6c79d.jpg',
   'https://n3.sdlcdn.com/imgs/k/f/v/12_april_WB_Breezy_Dresses_WEB-5febf.jpg',
@@ -32,7 +32,10 @@ function PromoCarousel() {
 
   };
   const offset = ref.current ? activeIndex * ref.current.clientWidth : 0;
- 
+  // useEffect(() => { 
+  //   let timer = setInterval(() => { console.log('tick');handleNext(); }, 1000);
+  //   return clearInterval(timer);
+  // }, []);
   return (
     <Box>
       <Box className="carousel_container">
@@ -46,7 +49,7 @@ function PromoCarousel() {
             
             spacing="0px"
             transform={`translateX(-${offset}px)`}
-            className=""
+            className="slider"
           >
           {items.map(item => (
             <Image h="280px" objectFit="cover" src={item} />

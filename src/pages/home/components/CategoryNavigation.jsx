@@ -39,7 +39,7 @@ const moreCategories = [
 ];
 function CategoryNavigationBar() {
   return (
-    <VStack p={4} fontSize=".75rem">
+    <VStack p={4} fontSize=".75rem" bg='white'>
       <Box>
         <Text my={2}>TOP CATEGORIES</Text>
         {topCategories?.map(cat => (

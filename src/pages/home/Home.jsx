@@ -15,6 +15,8 @@ import RecentlyViewedProducts from './components/RecentlyViewedProducts';
 import TrendingCaraousel from './components/TrendingCarousel';
 import styled from 'styled-components';
 const Wrapper = styled.div`
+  background-color:#F4F4F4;
+  padding:1rem;
   .pincode-container{
     padding:5px;
     & *{
@@ -48,7 +50,7 @@ function Home() {
 
         `}
         gridTemplateColumns={'200px repeat(3,240px) 220px'}
-        gridTemplateRows={'repeat(3,320px) 465px'}
+        gridTemplateRows={'repeat(2,320px) 400px 465px'}
         w="fit-content"
         mx="auto"
         my={4}
@@ -56,10 +58,10 @@ function Home() {
         <GridItem border="1px dotted" area={'catnav'}>
           <CategoryNavigationBar />
         </GridItem>
-        <GridItem border="1px dotted" area="promo">
+        <GridItem border="1px dotted" area="promo" bg='white'>
           <PromoCarousel />
         </GridItem>
-        <GridItem border="1px dotted" area="pincode">
+        <GridItem border="1px dotted" area="pincode" bg='white'>
           <Box textAlign={'center'} className="pincode-container">
             <Box
               className="location-img"
@@ -106,11 +108,10 @@ function Home() {
         <GridItem border="1px dotted" area="trend">
           <TrendingCaraousel />
         </GridItem>
-        <GridItem border="1px dotted" area="app">
+        <GridItem border="1px dotted" area="app" bg='white'>
           <MobileAppBanner />
         </GridItem>
-        {/* <GridItem></GridItem> */}
-        {/* <GridItem></GridItem> */}
+       
       </Grid>
     </Wrapper>
   );
