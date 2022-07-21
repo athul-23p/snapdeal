@@ -22,6 +22,9 @@ const theme = extendTheme({
       },
       "*": {
         boxSizing:'border-box'
+      },
+      "input":{
+        borderRadius:'0px'
       }
     }
   }

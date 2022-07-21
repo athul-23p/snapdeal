@@ -26,7 +26,6 @@ const Wrapper = styled.div`
 
     .pin-input{
       border-radius: 0px;
-      font-siz
       padding: .5rem;
       margin:15px 0px;
       height:35px;

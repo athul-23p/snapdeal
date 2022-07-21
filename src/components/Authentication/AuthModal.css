@@ -1,0 +1,61 @@
+.auth-bg{
+
+    background: url(https://i3.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png);
+    background-position: 0px 0px;
+    
+}
+
+.content *{
+    /* background-color: rgba(85, 231, 56, 0.178); */
+    font-size: .7rem;
+}
+
+
+button.auth-btn{
+    background-color: red;
+    color:white;
+    width: 80%;
+    margin: auto;
+    border-radius: none;
+    text-transform: uppercase;
+}
+
+button.auth-btn-continue{
+    margin-top: 30px;
+    font-size: .7rem;
+    border-radius: 0px;
+}
+button.auth-btn:hover{
+ background-color: red;
+}
+
+.auth-bg-img{
+    /* border:1px dotted; */
+    width:60px;
+    height: 70px;
+    background : url(https://i3.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png);
+}
+.auth-bg-img1{
+    background-position: 4px 116px;
+}
+.auth-bg-img2{
+    background-position: -59px 116px;
+}
+.auth-bg-img3{
+    background-position: -130px 116px;
+}
+
+.auth-loginsignup > input {
+ 
+    font-size: .7rem;
+}
+
+/* signup */
+/* .auth-signup-form{
+    
+} */
+
+div.auth-signup-form > input {
+    margin: 1rem 0rem;
+  
+}
