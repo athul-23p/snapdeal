@@ -59,3 +59,10 @@ div.auth-signup-form > input {
     margin: 1rem 0rem;
   
 }
+
+.auth-verificaton-img{
+    background: url(https://i3.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png);
+    background-position: -250px -365px;
+    height: 140px;
+    width: 208px;
+}
