@@ -6,12 +6,18 @@ const app = express();
 const authController = require('./controllers/auth.controller');
 const locationController = require('./controllers/location.controller');
 const productController = require('./controllers/product.controller');
+const recentController = require('./controllers/recent.controller');
+const trendingController = require('./controllers/trending.controller');
 
 const {signup,login} = authController;
 app.use(cors());
 app.use(express.json());
 app.use('/location',locationController);
 app.use('/products',productController);
+app.use('/recent',recentController);
+app.use('/trending', trendingController);
+
+
 app.post('/auth/login',login);
 app.post('/auth/signup',signup);
 app.get('/',async(req,res) => {
