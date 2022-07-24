@@ -3,19 +3,19 @@ import { useRef, useState } from 'react';
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import CarouselNextButton from './CarouselNextButton';
 import CarouselPrevButton from './CarouselPrevButton';
-const data = {
-  img: 'https://n1.sdlcdn.com/imgs/i/n/r/large/bhawna-collection-Loard-Shiv-Trishul-SDL890408077-1-86933.jpeg',
-  rating: {
-    rate: 3.9,
-    ratings: 19191,
-    reviews: 236,
-  },
-  price: 130,
-  original_price: 1499,
-  disc_perc: 91,
-  name: 'Bhawna Collection Loard Shiv Trishul Damru Locket With Puchmukhi Rudraksha Mala Gold-plated Brass, Wood For Men & Women',
-};
-function TrendingCaraousel() {
+// const data = {
+//   img: 'https://n1.sdlcdn.com/imgs/i/n/r/large/bhawna-collection-Loard-Shiv-Trishul-SDL890408077-1-86933.jpeg',
+//   rating: {
+//     rate: 3.9,
+//     ratings: 19191,
+//     reviews: 236,
+//   },
+//   price: 130,
+//   original_price: 1499,
+//   disc_perc: 91,
+//   name: 'Bhawna Collection Loard Shiv Trishul Damru Locket With Puchmukhi Rudraksha Mala Gold-plated Brass, Wood For Men & Women',
+// };
+function TrendingCaraousel({products}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef(null);
 
@@ -39,7 +39,10 @@ function TrendingCaraousel() {
         <CarouselNextButton handleClick={handleNext} />
         <CarouselPrevButton handleClick={handlePrev} />
         <HStack spacing={'0px'} transform={`translateX(-${offset}px)`}>
-          <ProductCard {...data} />
+          {
+            products?.map(data => <ProductCard {...data.product} />)
+
+          }
         </HStack>
       </Box>
     </Box>

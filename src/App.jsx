@@ -10,9 +10,10 @@ import {
   extendTheme,
   
 } from '@chakra-ui/react';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import AllRoutes from './routes/AllRoutes';
+import './App.css';
 const theme = extendTheme({
   styles: {
     global: {
@@ -23,9 +24,6 @@ const theme = extendTheme({
       "*": {
         boxSizing:'border-box'
       },
-      "input":{
-        borderRadius:'0px'
-      }
     }
   }
 })

@@ -14,29 +14,34 @@ import PromoCarousel from './components/PromoCarousel';
 import RecentlyViewedProducts from './components/RecentlyViewedProducts';
 import TrendingCaraousel from './components/TrendingCarousel';
 import styled from 'styled-components';
+import { useGetTrendingProductsQuery } from '../../redux/services/trending';
 const Wrapper = styled.div`
-  background-color:#F4F4F4;
-  padding:1rem;
-  .pincode-container{
-    padding:5px;
-    & *{
-      font-size:.65rem;
-      
-    } 
-
-    .pin-input{
-      border-radius: 0px;
-      padding: .5rem;
-      margin:15px 0px;
-      height:35px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  .pincode-container {
+    padding: 5px;
+    & * {
+      font-size: 0.65rem;
     }
-    .location-img{
-      background-position : -10px 5px;
+
+    .pin-input {
+      border-radius: 0px;
+      padding: 0.5rem;
+      margin: 15px 0px;
+      height: 35px;
+    }
+    .location-img {
+      background-position: -10px 5px;
     }
   }
- 
 `;
 function Home() {
+  const {
+    data: trendingProducts,
+    error,
+    isLoading,
+  } = useGetTrendingProductsQuery();
+  console.log(trendingProducts);
   return (
     <Wrapper>
       <Grid
@@ -57,17 +62,17 @@ function Home() {
         <GridItem border="1px dotted" area={'catnav'}>
           <CategoryNavigationBar />
         </GridItem>
-        <GridItem border="1px dotted" area="promo" bg='white'>
+        <GridItem border="1px dotted" area="promo" bg="white">
           <PromoCarousel />
         </GridItem>
-        <GridItem border="1px dotted" area="pincode" bg='white'>
+        <GridItem border="1px dotted" area="pincode" bg="white">
           <Box textAlign={'center'} className="pincode-container">
             <Box
               className="location-img"
               background={'url(https://i2.sdlcdn.com/img/artboardNext.png)'}
-              h='120px'
-              w='120px'
-              mx='auto'
+              h="120px"
+              w="120px"
+              mx="auto"
               backgroundRepeat={'no-repeat'}
               my={2}
             ></Box>
@@ -105,12 +110,11 @@ function Home() {
           <RecentlyViewedProducts />
         </GridItem>
         <GridItem border="1px dotted" area="trend">
-          <TrendingCaraousel />
+          <TrendingCaraousel products={trendingProducts} />
         </GridItem>
-        <GridItem border="1px dotted" area="app" bg='white'>
+        <GridItem border="1px dotted" area="app" bg="white">
           <MobileAppBanner />
         </GridItem>
-       
       </Grid>
     </Wrapper>
   );
