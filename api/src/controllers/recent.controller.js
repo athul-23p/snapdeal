@@ -12,8 +12,14 @@ router.post('/addProduct',async (req,res) => {
          *      docModel:[clothing]
          * }
          */
-        const {body} = req;
-        const doc = await Recent.create(body);
+        const {user,product} = req.body;
+        let doc = await Recent.find({user,product}).exec();
+       
+        if(doc.length !== 0){
+          res.status(200).send('Already in list')
+          return ;
+        }
+        doc = await Recent.create(body);
         res.status(201).send(doc);
     } catch (error) {
         res.status(400).send(error.message);

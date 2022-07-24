@@ -10,9 +10,14 @@ router.post('/addProduct', async (req, res) => {
      *      docModel:[clothing]
      * }
      */
-    const { body } = req;
-    console.log(body);
-    const doc = await Trending.create(body);
+    const { product } = req.body;
+    let doc = await Trending.find({product}).exec();
+     if (doc.length !== 0) {
+       res.status(200).send('Already in list');
+       return;
+     }
+    
+    doc = await Trending.create(body);
     res.status(201).send(doc);
   } catch (error) {
     res.status(400).send(error.message);
