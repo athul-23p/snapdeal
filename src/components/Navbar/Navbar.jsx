@@ -11,9 +11,12 @@ import {
 } from '@chakra-ui/react';
 import { useState, useRef } from 'react';
 import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { FaUserCircle } from 'react-icons/fa';
+import Signin from './Signin';
+
 function Navbar() {
   const [showPopup, setShowPopup] = useState(false);
+ 
+
   const [query, setQuery] = useState('');
   const searchElement = useRef(0);
   return (
@@ -70,14 +73,7 @@ function Navbar() {
         >
           Cart
         </Button>
-        <Button
-          as={Link}
-          _hover={{ textDecoration: 'none', bg: 'transparent' }}
-          bg="transparent"
-          rightIcon={<FaUserCircle />}
-        >
-          Sign in
-        </Button>
+      <Signin />
       </GridItem>
     
     </Grid>

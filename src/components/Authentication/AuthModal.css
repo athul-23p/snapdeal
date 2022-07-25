@@ -1,6 +1,8 @@
 .auth-bg{
 
     background: url(https://i3.sdlcdn.com/img/snapdeal/sprite/userAuthSpritev3.png);
+    margin-left: -23px;
+    margin-top: -5px;
     background-position: 0px 0px;
     
 }
@@ -20,6 +22,11 @@ button.auth-btn{
     text-transform: uppercase;
 }
 
+button.login{
+    font-size: .9rem;
+    height: fit-content;
+    padding:8px;
+}
 button.auth-btn-continue{
     margin-top: 30px;
     font-size: .7rem;

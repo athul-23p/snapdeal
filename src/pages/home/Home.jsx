@@ -6,6 +6,7 @@ import {
   Input,
   HStack,
   Button,
+  Center,
 } from '@chakra-ui/react';
 import CategoryNavigationBar from './components/CategoryNavigation';
 import MobileAppBanner from './components/MobileAppBanner';
@@ -39,9 +40,18 @@ function Home() {
   const {
     data: trendingProducts,
     error,
+    isError,
     isLoading,
   } = useGetTrendingProductsQuery();
-  console.log(trendingProducts);
+
+
+  if(isError){
+    console.log(error);
+    return <Center h='100vh'>
+      <Text>Something Went Wrong</Text>
+    </Center>
+  }
+  // console.log(trendingProducts);
   return (
     <Wrapper>
       <Grid
@@ -54,18 +64,18 @@ function Home() {
 
         `}
         gridTemplateColumns={'200px repeat(3,240px) 220px'}
-        gridTemplateRows={'repeat(2,320px) 400px 465px'}
+        gridTemplateRows={'repeat(2,320px) 340px 465px'}
         w="fit-content"
         mx="auto"
         my={4}
       >
-        <GridItem border="1px dotted" area={'catnav'}>
+        <GridItem  area={'catnav'}>
           <CategoryNavigationBar />
         </GridItem>
-        <GridItem border="1px dotted" area="promo" bg="white">
+        <GridItem  area="promo" bg="white">
           <PromoCarousel />
         </GridItem>
-        <GridItem border="1px dotted" area="pincode" bg="white">
+        <GridItem  area="pincode" bg="white">
           <Box textAlign={'center'} className="pincode-container">
             <Box
               className="location-img"
@@ -106,13 +116,13 @@ function Home() {
             </HStack>
           </Box>
         </GridItem>
-        <GridItem border="1px dotted" area="recent">
-          <RecentlyViewedProducts />
+        <GridItem  area="recent">
+          {/* <RecentlyViewedProducts /> */}
         </GridItem>
-        <GridItem border="1px dotted" area="trend">
+        <GridItem  area="trend">
           <TrendingCaraousel products={trendingProducts} />
         </GridItem>
-        <GridItem border="1px dotted" area="app" bg="white">
+        <GridItem  area="app" bg="white">
           <MobileAppBanner />
         </GridItem>
       </Grid>
