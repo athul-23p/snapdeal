@@ -16,7 +16,7 @@ const signup = async (req, res) => {
 
     return res.status(201).send(user);
   } catch (error) {
-    return res.status(500).send(error);
+    return res.status(400).send(error);
   }
 };
 
@@ -37,8 +37,20 @@ const login = async (req, res) => {
     const token = generateToken(user);
     return res.status(200).send({ user, token });
   } catch (error) {
-    return res.status(500).send(error);
+    return res.status(400).send(error);
   }
 };
-
-module.exports = { signup, login };
+const getUser = async(req,res) => {
+  try {
+    const user = await User.find({'email':req.params.useremail});
+    if(user.length === 0){
+      res.status(200).json({userExists:false,email:null});
+      return ;
+    }
+    res.status(200).json({userExists: true,email:user[0].email});
+  } catch (error) {
+    return res.status(400).send(error);
+    
+  }
+}
+module.exports = { signup, login,getUser };
