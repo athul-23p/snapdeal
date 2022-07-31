@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const recentSchema = new mongoose.Schema(
   {
-    user: { type: mongoose.Types.ObjectId, ref: 'user' },
+   ipAddress:{type:String,required:true},
     product: { type: mongoose.Types.ObjectId, refPath: 'docModel' },
     docModel: {
       type: String,

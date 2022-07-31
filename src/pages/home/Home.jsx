@@ -117,7 +117,7 @@ function Home() {
           </Box>
         </GridItem>
         <GridItem  area="recent">
-          {/* <RecentlyViewedProducts /> */}
+          <RecentlyViewedProducts />
         </GridItem>
         <GridItem  area="trend">
           <TrendingCaraousel products={trendingProducts} />
